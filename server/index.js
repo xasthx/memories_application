@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true}));
 app.use(cors());
 
 //mongodb+srv://<username>:<password>@cluster0.h4daz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
-const CONNECTION_URL = 'mongodb+srv://linuxvm:memories123@cluster0.h4daz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+const CONNECTION_URL = 'mongodb+srv://<username>:<password>@cluster0.h4daz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 const PORT = process.env.PORT || 5000;
 
 // useNewUrlParser, useUnifiedTopology, useFindAndModify and useCreateIndex are no longer supported
