@@ -3,7 +3,7 @@ import { GoogleLogin } from 'react-google-login';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
-import {signin, signup} from '../../actions/auth';
+import { signin, signup } from '../../actions/auth';
 
 import { Avatar, Button, Paper, Grid, Typography, Container } from '@material-ui/core';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
@@ -25,17 +25,18 @@ const Auth = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
-    if(isSignup){
-      dispatch(signup(formData, history))
-    }else{
-      dispatch(signin(formData, history))
-
+    //console.log(formData);
+    if (isSignup) {
+      //console.log(formData);
+      dispatch(signup(formData, history));
+    } else {
+      dispatch(signin(formData, history));
     }
   }
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value })
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+    //console.log(formData);
   }
 
   const handleShowPassword = () => {
@@ -44,11 +45,11 @@ const Auth = () => {
 
   const switchMode = () => {
     setSignup((prevSignUp) => !prevSignUp);
-    handleShowPassword(false);
+    setShowPassword(false);
   }
 
   const googleSuccess = async (res) => {
-    console.log(res);
+    //console.log(res);
     const result = res?.profileObj;
     const token = res?.tokenId;
     try {
