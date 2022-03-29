@@ -8,7 +8,7 @@ export const getPosts = () => async (dispatch) => {
 
         dispatch(action);
     } catch (error) {
-        console.log(error.message);
+        console.log(error);
     }
 }
 
